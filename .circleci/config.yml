@@ -49,6 +49,7 @@ workflows:
       - test-job:
           name: test-3
           requires: 
+            - test-2
             - ggshield-scan
 
 
