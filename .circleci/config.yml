@@ -39,4 +39,8 @@ workflows:
           context: 
             - demo
       - test-job
+          requires: 
+            - ggshield-scan
+
+
 
