@@ -39,8 +39,16 @@ workflows:
           context: 
             - demo
       - test-job:
+          name: test-1
           requires: 
             - ggshield-scan
-
+      - test-job:
+          name: test-2
+          requires: 
+            - test-1
+      - test-job:
+          name: test-3
+          requires: 
+            - ggshield-scan
 
 
