@@ -35,3 +35,6 @@ workflows:
           name: ggshield-scan
           # base_revision: 
           revision: <<pipeline.git.revision>>
+          context: 
+            - demo
+
