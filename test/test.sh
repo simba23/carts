@@ -20,7 +20,8 @@ fi
 echo "Testing $1"
 CODE_DIR=$(cd $SCRIPT_DIR/..; pwd)
 echo "$@"
-$DOCKER_CMD run \
+# $DOCKER_CMD run \
+docker run \
 	    --rm \
 	    --name test \
 	    -v /var/run/docker.sock:/var/run/docker.sock \
