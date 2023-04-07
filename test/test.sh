@@ -32,5 +32,12 @@ $DOCKER_CMD run \
 	    -e TRAVIS=$TRAVIS \
 	    -e TAG=$TAG \
 	    -e COMMIT=$COMMIT \
+            -e CIRCLECI=true \ 
+            -e CIRCLE_JOB=$CIRCLE_JOB \ 
+            -e CIRCLE_BRANCH=$CIRCLE_BRANCH \ 
+            -e CIRCLE_PULL_REQUEST=$CIRCLE_PULL_REQUEST \ 
+            -e CIRCLE_BUILD_NUM=$CIRCLE_BUILD_NUM \ 
+            -e CIRCLE_SHA1=$CIRCLE_SHA1 \ 
+            -e CIRCLE_TAG=$CIRCLE_TAG \ 
 	    test-container \
 	    sh -c "export PYTHONPATH=\$PYTHONPATH:\$PWD/test ; python test/$@"
