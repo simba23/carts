@@ -38,7 +38,7 @@ workflows:
           revision: <<pipeline.git.revision>>
           context: 
             - demo
-      - test-job
+      - test-job:
           requires: 
             - ggshield-scan
 
