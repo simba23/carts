@@ -18,6 +18,7 @@ jobs:
     # Add steps to the job
     # See: https://circleci.com/docs/configuration-reference/#steps
     steps:
+      - setup_remote_docker
       - checkout
       - run:
           name: run-test
