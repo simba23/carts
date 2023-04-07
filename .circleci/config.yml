@@ -7,16 +7,17 @@ orbs:
   # github-super-linter: circleci/github-super-linter@1.0.1
   ggshield: gitguardian/ggshield@1.1.4
 
+parameters:
+  index:
+    description: index directory
+    type: string
+    default: "index docs"
+
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
 jobs:
   test-job:
     # test
-    parameters:
-      index:
-        description: index directory
-        type: string
-        default: "index docs"
     # See: https://circleci.com/docs/configuration-reference/#executor-job
     docker:
       - image: cimg/openjdk:19.0.2
@@ -24,7 +25,7 @@ jobs:
     # See: https://circleci.com/docs/configuration-reference/#steps
     steps:
       - setup_remote_docker
-      - run: echo <<parameters.index>> 
+      - run: echo <<pipeline.parameters.index>> 
       - checkout
       - run:
           name: run-test
